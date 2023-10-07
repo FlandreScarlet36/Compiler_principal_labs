@@ -1,9 +1,0 @@
-int a;
-int b;
-void f(int c)
-{
-    int d;
-    {
-        int e;
-    }
-}
