@@ -1,4 +1,4 @@
-.PHONY: test-fib, clean
+.PHONY: test-fib, test-fac, clean
 test-fib:
 	arm-linux-gnueabihf-gcc fib.s sylib.c -o fib.out -static
 	qemu-arm ./fib.out
