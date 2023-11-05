@@ -1,9 +1,6 @@
-.PHONY: test-fib, test-fac, clean
-test-fib:
-	arm-linux-gnueabihf-gcc fib.s sylib.c -o fib.out -static
-	qemu-arm ./fib.out
-test-fac:
-	arm-linux-gnueabihf-gcc fac.s sylib.c -o fac.out -static
-	qemu-arm ./fac.out
+.PHONY:test,clean
+test:
+	arm-linux-gnueabihf-gcc example.S -o example.out
+	qemu-arm -L /usr/arm-linux-gnueabihf ./example.out
 clean:
-	rm -fr *.out
+	rm -fr example.out
