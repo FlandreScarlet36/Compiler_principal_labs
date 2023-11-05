@@ -297,7 +297,7 @@ void Tonfa(string suffix)
 
 输出展示
 
-![/NFA.png]
+<img src="/NFA.png">
 
 ## RE转为DFA，DFA最小化
 
@@ -487,4 +487,4 @@ void minimize()
 
 最后输出DFA。效果如下。
 
-![/DFA.png]
+<img src="/DFA.png">
