@@ -1,9 +1,3 @@
-/**
-* @file re2dfa.cpp
-* @brief Convert regular expression to minimal DFA
-* @param[in] expression Regular expression (txt file)
-* @param[out] dfa minimal DFA
-*/
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -546,17 +540,7 @@ void Todfa(vector<edge> nfa, string s1)
             dfa[i].terminal = true;
         }
     }
-    // cout << "============Dfa1============" << endl;
-    // cout << "nowID\tisterminal\tclosure" << endl;
-    // for (int i = 0; i < dfa.size(); i++)
-    // {
-    //     cout << dfa[i].nowID << "\t" << dfa[i].terminal << "\t\t";
-    //     for (int j = 0; j < dfa[i].closure.size(); j++)
-    //     {
-    //         cout << dfa[i].closure[j] << " ";
-    //     }
-    //     cout << endl;
-    // }
+
     dfa.insert(dfa.end(), dumplicate.begin(), dumplicate.end());
     sort(dfa.begin(), dfa.end(), [](state a, state b)
          { return a.nowID < b.nowID; });
@@ -567,17 +551,7 @@ void Todfa(vector<edge> nfa, string s1)
             dfa[i].terminal = true;
         }
     }
-    // cout << "============Dfa2============" << endl;
-    // cout << "lastID\ttrans\tnowID\tisterminal\tclosure" << endl;
-    // for (int i = 0; i < dfa.size(); i++)
-    // {
-    //     cout << dfa[i].lastID << "\t" << dfa[i].trans << "\t" << dfa[i].nowID << "\t" << dfa[i].terminal << "\t\t";
-    //     for (int j = 0; j < dfa[i].closure.size(); j++)
-    //     {
-    //         cout << dfa[i].closure[j] << " ";
-    //     }
-    //     cout << endl;
-    // }
+
 }
 
 void deletedumplicate(int a, int b)
@@ -645,21 +619,12 @@ void minimize()
                 V.pop_back();
             }
         }
-        // for (int i = 0; i < V.size(); i++)
-        // {
-        //     for (int j = 0; j < V[i].size(); j++)
-        //     {
-        //         cout << V[i][j] << " ";
-        //     }
-        //     cout << endl;
-        // }
         for (int i = 0; i < V.size(); i++)
         {
             for (int j = i + 1; j < V.size(); j++)
             {
                 if (V[i] == V[j] && !V[j].empty())
                 {
-                    // cout << "state" << i << "," << j << "can be one state" << endl;
                     endend = true;
                     tomove.push_back(j);
                     deletedumplicate(i, j);

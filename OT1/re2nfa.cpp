@@ -1,9 +1,3 @@
-/**
- * @file re2nfa.cpp
- * @brief Convert regular expression to NFA
- * @param[in] expression Regular expression (txt file)
- * @param[out] nfa NFA (markdown file)
- */
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -214,20 +208,6 @@ void Tonfa(string suffix)
             endst.pop();
             endst.push(temp);
         }
-        // else if (tmp == '.')
-        // {
-        //     // ID++;
-        //     edge e1;
-        //     e1.trans = '='; // epsilon
-        //     e1.endID = beginst.top();
-        //     beginst.pop();
-        //     int temp = endst.top();
-        //     endst.pop();
-        //     e1.beginID = endst.top();
-        //     endst.pop();
-        //     endst.push(temp);
-        //     nfa.push_back(e1);
-        // }
         else if (tmp == '*')
         {
             ID++;
@@ -266,19 +246,6 @@ void Tonfa(string suffix)
     {
         cout << nfa[i].beginID << "\t" << nfa[i].trans << "\t" << nfa[i].endID << endl;
     }
-
-    // for (int i = 0; i < nfa.size() - 1; i++)
-    // {
-    //     if (nfa[i + 1].beginID == nfa[i].endID && nfa[i + 1].trans == '=' && nfa[i+1].endID == nfa[i+1].beginID+1)
-    //     {
-    //         nfa.erase(nfa.begin() + i + 1);
-    //         for (int j = i + 1; j < nfa.size(); j++)
-    //         {
-    //             nfa[j].beginID--;
-    //             nfa[j].endID--;
-    //         }
-    //     }
-    // }
 }
 
 int findbegin()
@@ -338,7 +305,7 @@ int main()
         return 1;
     }
     int n = 0;
-    ofstream fout("output.md", ios::out);
+    ofstream fout("nfa.md", ios::out);
     while (!fin.eof())
     {
         n++;
