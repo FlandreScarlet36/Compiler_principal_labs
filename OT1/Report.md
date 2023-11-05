@@ -1,7 +1,3 @@
----
-typora-root-url: ./
----
-
 # 词法分析器核心算法实现
 
 ## RE转为NFA
@@ -297,7 +293,7 @@ void Tonfa(string suffix)
 
 输出展示
 
-<img src="/NFA.png">
+<img src="/OT1/NFA.png">
 
 ## RE转为DFA，DFA最小化
 
@@ -487,4 +483,4 @@ void minimize()
 
 最后输出DFA。效果如下。
 
-<img src="/DFA.png">
+<img src="/OT1/DFA.png">
